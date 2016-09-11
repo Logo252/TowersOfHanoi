@@ -15,15 +15,6 @@ class Tower {
     }
 
     /**
-     * Returns the tower's height.
-     * @return Integer containing the tower's height
-     */
-    public int getStackSize(){
-
-        return discs.size();
-    }
-
-    /**
      * The equivalent of the push function for a stack.
      * @param disk Integer containing the size of the disk being placed into the tower.
      */
@@ -50,8 +41,8 @@ class Tower {
         // Converting stack of integers to array
         Object[] discsArray = discs.toArray();
 
-        int iMax = discsArray.length - 1;
-        if (iMax == -1)
+        int maxLength = discsArray.length - 1;
+        if (maxLength == -1)
             return "()";
 
         StringBuilder builder = new StringBuilder();
@@ -60,7 +51,7 @@ class Tower {
         for (int i = 0; ; i++) {
             builder.append(String.valueOf(discsArray[i]));
 
-            if (i == iMax)
+            if (i == maxLength)
                 return builder.append(')').toString();
             builder.append(", ");
         }

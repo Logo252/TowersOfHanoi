@@ -1,6 +1,5 @@
 package com.company;
 
-
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -14,6 +13,7 @@ import java.util.Scanner;
  */
 public class TowersOfHanoi {
 
+    // Declaring 3 towers
     private Tower towerA;
     private Tower towerB;
     private Tower towerC;
@@ -41,20 +41,20 @@ public class TowersOfHanoi {
 
     private TowersOfHanoi(int numberOfDiscs){
 
-        // Initialize the Three Towers and array
+        // Initialize 3 towers and array
         towerA = new Tower();
         towerB = new Tower();
         towerC = new Tower();
-        numberOfSteps = 1;
-
         HashMap<Character, Tower> arrayOfTowers = new HashMap<>();
 
-        // Add the Three Towers to the ArrayList
+        numberOfSteps = 1;
+
+        // Add 3 towers to the ArrayList
         arrayOfTowers.put('A', towerA);
         arrayOfTowers.put('B', towerB);
         arrayOfTowers.put('C', towerC);
 
-        // Add all discs to Tower A
+        // Add all discs to initial tower A
         for(int counter = numberOfDiscs; counter >= 1; counter--) {
             towerA.placeDisk(counter);
         }
