@@ -68,14 +68,14 @@ public class TowersOfHanoi {
         if (n == 1){
             moveDiscToTower(towers.get(start), towers.get(end) );
 
-            System.out.println(numberOfSteps++ + ".\t" + "Disc " + n + " from " + start + " ---> " + end + "\t\t" +
+            System.out.println(numberOfSteps++ + ".\t" + "Disc " + n + " from " + start + " move to " + end + "\t\t" +
                     printTowers() );
         } else{
             moveDiscs(n - 1, start, end, intermediate, towers);
 
             moveDiscToTower(towers.get(start), towers.get(end));
 
-            System.out.println(numberOfSteps++ + ".\t" + "Disc " + n + " from " + start + " ---> " + end + "\t\t" +
+            System.out.println(numberOfSteps++ + ".\t" + "Disc " + n + " from " + start + " move to " + end + "\t\t" +
                     printTowers());
 
             moveDiscs(n - 1, intermediate, start, end, towers);
@@ -114,6 +114,8 @@ public class TowersOfHanoi {
         // Append contents from C tower
         currentState.append("C=");
         currentState.append(towerC.getTowerState());
+
+        currentState.append(".");
 
         return currentState;
 
